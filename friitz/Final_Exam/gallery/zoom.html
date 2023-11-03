@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @keyframes slide-in {
+        0% {
+            transform: translateX(-100%);
+        }
+
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    .slide-in-element {
+        animation: slide-in 1s ease forwards;
+    }
+
+    @keyframes zoom-in-out {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    .zoom-element {
+        animation: zoom-in-out 2s ease-in-out infinite;
+    }
+
+    .animate {
+        animation-play-state: running;
+    }
+</style>
+
+<body>
+
+    <button id="startAnimationButton">Start Animation</button>
+    <div class="animated-element"></div>
+
+    <script type="text/javascript">
+        const startAnimationButton = document.getElementById('startAnimationButton');
+        const animatedElement = document.querySelector('.animated-element');
+
+        startAnimationButton.addEventListener('click', function () {
+            // Toggle the 'animate' class to start or stop the animation
+            animatedElement.classList.toggle('animate');
+        });
+
+
+    </script>
+</body>
+
+</html>
